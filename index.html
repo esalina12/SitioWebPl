@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -16,41 +16,55 @@
 </head>
 
 <body>
-    <header>
-        <!-- INICIO NAV -->
-        <nav class="nav-header" id="inicio">
-            <ul>
-                <li><a href="#inicio">HOME</a></li>
-                <li><a href="#nosotros">NOSOTROS</a></li>
-                <li><a href="#servicios">SERVICIOS</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
+
+    <!-- NAV -->
+    <header class="header" id="inicio">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#inicio">
+                    <img src="img/logo.png" alt="Plutonio Agencia Digital">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Home</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
-        <!-- FIN NAV -->
+        <div class="nav-mobile" id="navMobile">
+            <ul>
+                <li><a href="#inicio" onclick="cerrarMenu()">Home</a></li>
+                <li><a href="#nosotros" onclick="cerrarMenu()">Nosotros</a></li>
+                <li><a href="#servicios" onclick="cerrarMenu()">Servicios</a></li>
+                <li><a href="#contacto" onclick="cerrarMenu()">Contacto</a></li>
+            </ul>
+        </div>
     </header>
-    
+    <!-- FIN NAV -->
+
     <main>
-        <!---------------------- INICIO PORTADA -->
-        <section>
-            <div class="portada">
-                <div class="logo" id="logo">
-                    <img src="img/logo.png" alt="Logo">
-                </div>
-                <div class="titulo">
-                    <div class="titulo-sub">
-                        <div id="t1">
-                            <p>Explotamos</p>
-                        </div>
-                        <div id="t2">
-                            <p>tu marca.</p>
-                        </div>
-                    </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-logo" data-aos="fade-right" data-aos-duration="900">
+                <img src="img/logo.png" alt="Plutonio Logo">
+            </div>
+            <div class="hero-texto">
+                <div class="hero-slogan" data-aos="fade-left" data-aos-duration="900">
+                    <span class="hero-linea1">Explotamos</span>
+                    <span class="hero-linea2">tu marca.</span>
                 </div>
             </div>
-            
         </section>
-        <!------------------------ FIN PORTADA -->
-        <!-- ------------------INICIO IMAGENES -->
+        <!-- FIN HERO -->
+
+        <!-- IMÁGENES -->
         <section>
             <div class="images">
                 <div class="img-1" data-aos="flip-right">
@@ -64,8 +78,8 @@
                 </div>
             </div>
         </section>
-        <!------------------- FIN IMAGENES -->
-        <!-- INICIO NOSOTROS ---------------- -->
+
+        <!-- NOSOTROS -->
         <section>
             <div id="nosotros">
                 <div class="nosotros">
@@ -86,87 +100,61 @@
                         <img src="img/nosotros.png" alt="Img-Nosotros">
                     </div>
                 </div>
-            </div>  
+            </div>
         </section>
-        <!-- FIN NOSOTROS ---------------- -->
-        <!-- INICIO SERVICIOS------------------- -->
+
+        <!-- SERVICIOS -->
         <section>
             <div id="servicios">
                 <div class="hacer">
                     <p>¿Qué podemos hacer por vos?</p>
                 </div>
                 <div class="cajas-hacer">
-                     <!-- CAJA 1 -->
                     <div class="caja" data-aos="flip-up">
                         <img src="img/lamparita.png" alt="" class="img">
-                        <div id="icono">
-                            <div class="icono-titulo">
-                                <p><strong>Diseño y Creación
-                                    de Contenido</strong></p>
-                            </div>
-                            <div class="icono-texto">
-                                <p>Diseñamos gráficas para tus RRSS  (Posteos para Feed, Historias, Flyers, Catálogos, Briefs y más) respetando la Identidad de tu Marca y tu estrategia teniendo presente tus objetivos.
-                                </p>
-                            </div>
+                        <div class="icono">
+                            <div class="icono-titulo"><p><strong>Diseño y Creación de Contenido</strong></p></div>
+                            <div class="icono-texto"><p>Diseñamos gráficas para tus RRSS (Posteos para Feed, Historias, Flyers, Catálogos, Briefs y más) respetando la Identidad de tu Marca.</p></div>
                         </div>
                     </div>
-                    <!-- CAJA 2 -->
-                    <div class="caja" data-aos="flip-up"> 
+                    <div class="caja" data-aos="flip-up">
                         <img src="img/chat.png" alt="" class="img">
-                        <div id="icono">
-                            <div class="icono-titulo">
-                                <p><strong>Community Managment | Gestión de RRSS</strong></p>
-                            </div>
-                            <div class="icono-texto">
-                                <p>Te brindamos el servicio integral para gestionar tu comunidad en RRSS, desde el diseño, el contenido, la planificación, la estrategia, la moderación y el logro de objetivos.</p>
-                            </div>
+                        <div class="icono">
+                            <div class="icono-titulo"><p><strong>Community Management | Gestión de RRSS</strong></p></div>
+                            <div class="icono-texto"><p>Te brindamos el servicio integral para gestionar tu comunidad en RRSS, desde el diseño hasta el logro de objetivos.</p></div>
                         </div>
                     </div>
-                    <!-- CAJA 3 -->
-                    <div class="caja" data-aos="flip-up"> 
+                    <div class="caja" data-aos="flip-up">
                         <img src="img/chispas.png" alt="" class="img">
-                        <div id="icono">
-                            <div class="icono-titulo">
-                                <p><strong>Branding |<br>
-                                    Identidad de Marca</strong></p>
-                            </div>
-                            <div class="icono-texto">
-                                <p>Te ayudamos a definir la identidad visual de tu negocio para formar una relación sólida con tus clientes y toda tu audiencia.</p>
-                            </div>
+                        <div class="icono">
+                            <div class="icono-titulo"><p><strong>Branding | Identidad de Marca</strong></p></div>
+                            <div class="icono-texto"><p>Te ayudamos a definir la identidad visual de tu negocio para formar una relación sólida con tus clientes.</p></div>
                         </div>
                     </div>
                 </div>
                 <div class="cajas-hacer1">
-                    <!-- CAJA 4 -->
-                    <div class="caja1" data-aos="flip-up"> 
+                    <div class="caja1" data-aos="flip-up">
                         <img src="img/dev.png" alt="" class="img">
-                        <div id="icono">
-                            <div class="icono-titulo">
-                                <p><strong>Desarrollo y Diseño Web</strong></p>
-                            </div>
-                            <div class="icono-texto">
-                                <p>Desarrollamos tu sitio web con un diseño creativo y dinámico priorizando la personalidad y los valores de tu negocio.</p>
-                            </div>
+                        <div class="icono">
+                            <div class="icono-titulo"><p><strong>Desarrollo y Diseño Web</strong></p></div>
+                            <div class="icono-texto"><p>Desarrollamos tu sitio web con un diseño creativo y dinámico priorizando la personalidad y los valores de tu negocio.</p></div>
                         </div>
                     </div>
-                    <div class="caja1" data-aos="flip-up"> <!-- CAJA 5 -->
+                    <div class="caja1" data-aos="flip-up">
                         <img src="img/megafono.png" alt="" class="img">
-                        <div id="icono">
-                            <div class="icono-titulo">
-                                <p><strong>Servicios de Comunicación y Marketing Digital</strong></p>
-                            </div>
-                            <div class="icono-texto">
-                                <p>Brindamos diferentes servicios complementarios que acompañarán a la comunicación de tu marca.</p>
-                            </div>
+                        <div class="icono">
+                            <div class="icono-titulo"><p><strong>Servicios de Comunicación y Marketing Digital</strong></p></div>
+                            <div class="icono-texto"><p>Brindamos diferentes servicios complementarios que acompañarán a la comunicación de tu marca.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- FIN SERVICIOS ----------------------- -->
+
     </main>
+
+    <!-- CONTACTO -->
     <footer>
-        <!------------------ INICIO CONTACTO-------------------->
         <div id="contacto">
             <div class="img-contacto">
                 <img src="img/Publicaciones Feed1.png" alt="Contacto">
@@ -175,21 +163,21 @@
                 <div class="titulo-contacto">
                     <p class="hablemos">¡Hablemos!</p>
                     <div class="redes">
-                        <a href="https://www.facebook.com/"><img src="img/facebook.svg" alt="facebook"></a>
-                        <img src="img/instagram.svg" alt="instagram">
-                        <img src="img/linkedin.svg" alt="linkedin">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.svg" alt="Facebook"></a>
+                        <img src="img/instagram.svg" alt="Instagram">
+                        <img src="img/linkedin.svg" alt="LinkedIn">
                     </div>
                 </div>
                 <div class="form-container">
                     <div class="form-group">
                         <h2>¡Escribinos tu consulta!</h2>
                         <form action="https://formsubmit.co/eze2334@gmail.com" method="POST" class="formulario">
-                            <label for="nombre" type="text" class="form-label" >Nombre</label>
-                            <input type="text" class="form-input" name="nombre">
-                            <label for="email" type="text" class="form-label">Mail</label>
-                            <input type="text" class="form-input" name="email">
-                            <label for="mensaje" type="text" class="form-label">Mensaje</label>
-                            <textarea name="mensaje" id="" cols="30" rows="5"></textarea>
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" id="nombre" class="form-input" name="nombre" required>
+                            <label for="email" class="form-label">Mail</label>
+                            <input type="email" id="email" class="form-input" name="email" required>
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" cols="30" rows="5" required></textarea>
                             <button type="submit">Enviar</button>
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_next" value="https://plutoniodigital.com.ar/exito.html">
@@ -199,35 +187,55 @@
                 <hr>
                 <div class="div-datos">
                     <div class="mail">
-                        <div class="mail-in">
-                            <img src="img/icono-mail.png" alt="email">
-                        </div>
+                        <div class="mail-in"><img src="img/icono-mail.png" alt="email"></div>
                         <div class="mail-in">
                             <p>CORREO ELECTRÓNICO</p>
                             <p>holaplutonio@gmail.com</p>
                         </div>
                     </div>
                     <div class="ubicacion">
-                        <div class="ubicacion-in">
-                            <img src="img/icono-pin.png" alt="Ubicacion">
-                        </div>
+                        <div class="ubicacion-in"><img src="img/icono-pin.png" alt="Ubicacion"></div>
                         <div class="ubicacion-in">
                             <p>Ciudad Autónoma de <br> Buenos Aires, Argentina</p>
                         </div>
                     </div>
-                    <br>
                 </div>
             </div>
         </div>
-       <!----------------------FIN CONTACTO----------------------> 
     </footer>
-    
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver al inicio">&#8679;</button>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800
+        AOS.init({ duration: 800 });
+
+        // Menú hamburguesa
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMobile');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('abierto');
+            toggle.classList.toggle('activo');
+        });
+
+        function cerrarMenu() {
+            menu.classList.remove('abierto');
+            toggle.classList.remove('activo');
+        }
+
+        // Scroll to top
+        const btnTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            btnTop.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
-</body>
 
+</body>
 </html>

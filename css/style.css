@@ -1,165 +1,235 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-
-
-/*------------------header------------------------*/
-.nav-header{
-    padding: 10px;
+/* ===================== NAV ===================== */
+.header {
     background-color: #8C52FF;
-    font-family: 'Balsamiq Sans', cursive;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    list-style-type: none;
+    position: relative;
+    z-index: 100;
 }
-nav ul{
-    width: 40%;
+
+.nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    justify-items: center;
     align-items: center;
-    list-style-type: none;
+    justify-content: space-between;
+    padding: 0 4vw;
+    height: 70px;
 }
-a{
-    color: aliceblue;
+
+.nav-logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.nav-links a {
+    color: #fff;
     text-decoration: none;
-}
-@media (max-width: 500px){
-    .nav-header{
-        justify-content: center;
-        font-size: 1.8vh;
-    }
-    nav ul{
-        width: 100%;
-    }
-}
-@media (min-width: 501px) and (max-width: 900px){
-    .nav-header{
-        justify-content: center;
-    }
-    nav ul{
-        width: 100%;
-    }
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
-/*----------------fin header-----------------------*/
+.nav-links a:hover {
+    border-bottom-color: #F62AA0;
+}
 
-/*--------------------- PORTADA --------------------*/
-.portada{
-    width: 100%;
-    height: 35%;
+/* Botón hamburguesa */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación hamburguesa → X */
+.nav-toggle.activo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.activo span:nth-child(2) { opacity: 0; }
+.nav-toggle.activo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menú mobile desplegable */
+.nav-mobile {
+    display: none;
+    background-color: #7a3fe8;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.nav-mobile.abierto {
+    max-height: 300px;
+    padding: 1rem 0;
+}
+
+.nav-mobile ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.nav-mobile a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-mobile { display: block; }
+}
+
+/* ===================== FIN NAV ===================== */
+
+/* ===================== HERO ===================== */
+.hero {
+    background-color: #8C52FF;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+    padding: 6vh 4vw 8vh;
+    gap: 4vw;
+    min-height: 55vh;
 }
-.titulo, .logo{
-    width: 50%;
-    background-color: #8C52FF;
-    font-family: 'League Spartan', sans-serif;
+
+.hero-logo {
+    width: 40%;
+    max-width: 380px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-content: space-evenly;
 }
-.titulo-sub{
+
+.hero-logo img {
     width: 100%;
-    height: 100%;
+    height: auto;
+}
+
+.hero-texto {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-slogan {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
+    font-family: 'League Spartan', sans-serif;
+    color: #fff;
+    line-height: 1;
 }
-#logo img{
-    border-radius: 0%;
-    padding: 10%;
-    animation: bounceInLeft;
-    animation-duration: 2s;
-}
-.titulo p{
-    font-size: 15vh;
-    color: aliceblue;
-    animation: bounceInRight;
-    animation-duration: 2s;
-}
-#t1{
-    width: auto;
-    height: 10%;
-}
-#t1 p{
+
+.hero-linea1 {
+    font-size: clamp(3rem, 8vw, 9rem);
     background-color: #F62AA0;
+    padding: 0 0.2em;
+    display: inline-block;
 }
-#t2{
-    width: 70%;
-    height: 10%;
-    margin-top: 20px;
+
+.hero-linea2 {
+    font-size: clamp(3rem, 8vw, 9rem);
+    margin-top: 0.2em;
+    display: inline-block;
 }
-@media (max-width: 500px){
-    .portada{
+
+/* Responsive hero */
+@media (max-width: 768px) {
+    .hero {
         flex-direction: column;
         align-items: center;
+        padding: 5vh 6vw 6vh;
+        min-height: unset;
+        gap: 3vh;
     }
-    .titulo,.logo{
+
+    .hero-logo {
+        width: 65%;
+        max-width: 260px;
+    }
+
+    .hero-texto {
         width: 100%;
-        padding: 5vh;
-    }
-    .titulo-sub{
-        align-items: center;
-        padding: 0 0 7vh 0;
-    }
-    .titulo p{
-        font-size: 8vh;
-    }
-    #t1,#t2{
-        width: 100%;
-        display: flex;
-        margin-top: 5%;
         justify-content: center;
+    }
+
+    .hero-slogan {
         align-items: center;
     }
-    
-}
-@media (min-width: 501px) and (max-width: 700px){
-    #logo img{
-        padding: 0%;
-        width: 60%;
-    }
-    .portada{
-        flex-direction: column;
-        align-items: center;
-    }
-    .titulo,.logo{
-        width: 100%;
-        align-items: center;
-    }
-    .titulo{
-        padding-bottom: 5vh;
-    }
-    .titulo-sub{
-        align-items: center;
-    }
-    .titulo p{
-        font-size: 10vh;
-    }
-    #t1,#t2{
-        display: flex;
-        margin-top: 5px;
-        justify-content: center;
-        align-items: center;
+
+    .hero-linea1,
+    .hero-linea2 {
+        font-size: clamp(2.8rem, 13vw, 5rem);
+        text-align: center;
     }
 }
-@media (min-width: 701px) and (max-width:1000px){
-    .titulo p{
-        font-size: 8vh;
-    }
-    .titulo p{
-        font-size: 10vh;
-    }
+
+/* ===================== FIN HERO ===================== */
+
+/* ===================== SCROLL TO TOP ===================== */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #F62AA0;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(246, 42, 160, 0.4);
 }
-/*---------------------- FIN PORTADA -----------------*/
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: #d41e88;
+}
+
+/* ===================== FIN SCROLL TO TOP ===================== */
 
 /*---------------------IMAGES-----------------*/
 .images{
@@ -343,13 +413,12 @@ a{
     border-style: solid;
     border-color: black;
 }
-#icono{
+.icono{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90%;
-    
 }
 .icono-texto{
     width: 85%;
